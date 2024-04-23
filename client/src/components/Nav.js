@@ -1,17 +1,26 @@
 import React from "react";
+import "../styles/Nav.css";
 
 export const Nav = () => {
   return (
-    <nav>
-      <div className="logo">Logo</div>
+    <nav className="nav-container">
       <div className="nav-links">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Contact</li>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
         </ul>
       </div>
+      <div className="logo">Yoga With Gabby</div>
+      <button type="submit" className="cta">
+        Work with me
+      </button>
     </nav>
   );
 };

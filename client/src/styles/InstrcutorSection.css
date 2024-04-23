@@ -1,0 +1,36 @@
+.instructor-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.portrait-image,
+.class-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+  flex: 2;
+  padding: 20px;
+}
+
+.text-container h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  color: #666;
+}
