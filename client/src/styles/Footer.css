@@ -1,3 +1,32 @@
 .footer-container {
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-navigation a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-social a {
+    color: #333;
+    margin: 0 10px;
+}
+
+.footer-contact p {
+    color: #333;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: #333;
+    padding-top: 10px;
 }
