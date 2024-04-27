@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/Nav.css";
 
+import yogaLogo from "../assets/gabLogo.svg";
+
 export const Nav = () => {
   return (
     <nav className="nav-container">
@@ -17,7 +19,9 @@ export const Nav = () => {
           </li>
         </ul>
       </div>
-      <div className="logo">Yoga With Gabby</div>
+      <div className="logo">
+        <img src={yogaLogo} alt="Yoga Logo" />
+      </div>
       <button type="submit" className="cta">
         Work with me
       </button>

@@ -25,7 +25,22 @@
     text-decoration: none;
 }
 
+.logo {
+    width: 180px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
 .cta {
+    padding: 15px 30px;
+    font-size: 1.2rem;
     justify-self: end;
     background: #f5f7fa;
     color: black;
