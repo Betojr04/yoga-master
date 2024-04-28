@@ -4,6 +4,7 @@ import "../styles/App.css";
 
 import { InstructorSection } from "../components/InstructorSection";
 import { ServicesSection } from "../components/ServicesSection";
+import { Contact } from "../components/Contact";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <HeroSection />
       <InstructorSection />
       <ServicesSection />
+      <Contact />
     </main>
   );
 };
