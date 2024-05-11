@@ -18,7 +18,7 @@ export const InstructorSection = () => {
       <div className="text-container">
         {" "}
         <h2>Meet the Instructor</h2>
-        <p>
+        <p className="text-subheading">
           Gabrielle Nielson is a certified yoga instructor with over 500 hours
           of training and experience. She specializes in fucking it up lol.
         </p>
