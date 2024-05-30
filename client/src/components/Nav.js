@@ -11,6 +11,7 @@ export const Nav = () => {
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
+
   return (
     <nav className="nav-container">
       <div className="logo">
@@ -19,27 +20,25 @@ export const Nav = () => {
       <div className="menu-icon" onClick={toggleMenu}>
         <FontAwesomeIcon icon={faBars} />
       </div>
-      {openMenu && (
-        <div className="nav-links open">
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-          <button type="submit" className="cta">
-            Work with me
-          </button>
-        </div>
-      )}
+      <div className={`nav-links ${openMenu ? "open" : ""}`}>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <button type="submit" className="cta">
+          Work with me
+        </button>
+      </div>
     </nav>
   );
 };
