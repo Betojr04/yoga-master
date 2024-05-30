@@ -6,7 +6,9 @@ export const HeroSection = () => {
     <section className="hero-section">
       <div className="overlay">
         <div className="text-container">
-          <h1 className="hero-heading">Welcome to Gabrielle Nielson Yoga</h1>
+          <h1 className="hero-heading">
+            Welcome to Happy House Yoga and Wellness
+          </h1>
           <p className="hero-subheading">
             Discover the path to inner peace and wellness
           </p>
