@@ -1,13 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarkerAlt,
   faEnvelope,
-  faPhone
+  faPhone,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
+import emailjs from "emailjs-com";
 import "../styles/ContactSection.css";
 
 export const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .then(
+        (result) => {
+          console.log(result.text);
+          setShowSuccessMessage(true);
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Message Sending Failed");
+        }
+      );
+
+    setFormData({
+      name: "",
+      email: "",
+      message: ""
+    });
+  };
+
+  const handleCloseMessage = () => {
+    setShowSuccessMessage(false);
+  };
+
   return (
     <section className="contact-section">
       <div className="contact-container">
@@ -44,14 +87,53 @@ export const Contact = () => {
             </div>
           </div>
         </div>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <h2>Send me a Message</h2>
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Your Email" />
-          <textarea placeholder="Your Message"></textarea>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
           <button type="submit">Send</button>
         </form>
       </div>
+      {showSuccessMessage && (
+        <div className="success-message" onClick={handleCloseMessage}>
+          <div
+            className="success-message-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="close-button" onClick={handleCloseMessage}>
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+            <p>Message Sent Successfully</p>
+            <button
+              className="submit-another-button"
+              onClick={handleCloseMessage}
+            >
+              Submit Another Response
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
