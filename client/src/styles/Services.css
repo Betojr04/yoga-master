@@ -1,0 +1,66 @@
+/* src/components/Services.css */
+
+.services-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    color: #444;
+}
+
+.services-container h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.services-container p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.services-container h2 {
+    color: #16a085;
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+.service-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.service-section>div {
+    flex: 1 1 calc(50% - 40px);
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+    transition: transform 0.3s;
+}
+
+.service-section>div:hover {
+    transform: scale(1.05);
+}
+
+.service-section h3 {
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.service-section p {
+    font-size: 1em;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .service-section>div {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+}
