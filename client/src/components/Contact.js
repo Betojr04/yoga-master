@@ -17,6 +17,11 @@ export const Contact = () => {
   });
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
+  // Debugging logs
+  console.log("Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID);
+  console.log("Template ID:", process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
+  console.log("User ID:", process.env.REACT_APP_EMAILJS_USER_ID);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -27,8 +32,14 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -116,7 +127,7 @@ export const Contact = () => {
         </form>
       </div>
       {showSuccessMessage && (
-        <div className="success-message" onClick={handleCloseMessage}>
+        <div className="success-message-overlay" onClick={handleCloseMessage}>
           <div
             className="success-message-content"
             onClick={(e) => e.stopPropagation()}
